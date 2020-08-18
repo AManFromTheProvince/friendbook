@@ -1,0 +1,41 @@
+<%= stylesheet_link_tag "users" %>
+<div class = "sidebar">
+    <div class = "user-info">
+        <%if @user.profile_picture.attached?%>
+            <img src = <%= url_for(@user.profile_picture)%> class = "big-profile-picture"%>
+        <%else%>
+            <div class = "big-profile-picture"></div>
+        <%end%>
+        <h2 class = "user_name"><%=@user.name%></h2>
+        <%if @user.id == current_user.id%>
+            <%=link_to 'Edit your profile', edit_user_registration_path(current_user), class: "edit-profile"%>
+        <%elsif friends_with_user?(@user)%>
+            <%= link_to 'Remove as friend', remove_user_friendship_path(current_user.id, @user.id), method: "delete", class: "cancel-option"%>
+        <%end%>
+    </div>
+    
+    <h3 id = "friends-title"><%=@friends.length%> Friends</h4>
+    
+    <div class = "friends-list">
+        <%@friends.each do|friend|%>
+            <div class = "friend">
+                <%if friend.profile_picture.attached?%>
+                    <img src = <%= url_for(friend.profile_picture)%> class = "medium-profile-picture"%>
+                <%else%>
+                    <div class = "medium-profile-picture"></div>
+                <%end%>
+                <%=link_to friend.name, user_path(friend), class: "friend-name"%>
+            </div>
+        <%end%>
+    </div>
+</div>
+<div class = "post-div">
+    <%if current_user.id == @user.id%>
+        <%= render 'posts/post_form'%>
+    <%end%>
+    <%if !@user.posts.empty?%>
+        <%= render 'posts/feed'%>
+    <%else%>
+        <h3 class = "message"><%=@user.name%> has no posts yet</h3>
+    <%end%>
+</div>

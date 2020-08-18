@@ -1,0 +1,155 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ 
+ 
+ */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ebeff3;
+}
+
+#wave{
+    background-color: #fb4f4f;
+    min-height: 120px;
+}
+
+#navbar{
+    min-height: 80px;
+    box-shadow: 0px 0px 4px #bbb;
+}
+
+.sign-up-navbar{
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 10%;
+    align-items: center;   
+    background-color: #fb4f4f;
+}
+
+.feed-navbar{
+    display: grid;
+    grid-template-columns: 5% 1fr 1fr 1fr 5%;
+    align-items: center;   
+    background-color: #fbfbfb;
+}
+
+#logo, #logo-user{
+    grid-column: 2/3;
+    width: max-content;
+    padding: 0.2em 0.7em;
+}
+
+#logo{
+    color: #fbfbfb;
+}
+
+#logo-user{
+    color: #fb4f4f;
+}
+
+#links-list, #users-links-list{
+    grid-column: 3/4;
+    display: flex;
+    list-style: none;
+}
+
+#links-list{
+justify-self: end;
+}
+
+.menu-links, .users-links{
+    margin: 0em 0.5em;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.menu-links a, .users-links{
+    text-decoration: none;
+    color: #fbfbfb;
+    position: relative;
+}
+
+.menu-links a::after, #active-link::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: #fbfbfb;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.2s ease;
+}
+
+.menu-links a:hover::after, #active-link::after{
+    width: 100%;
+}
+
+.material-icons{
+    color: #ddd;
+}
+
+.md-24{
+    font-size: 2.5em;
+}
+
+#users-links-list{
+    justify-self: center;
+}
+
+.users-links{
+    margin: 0em 1.5em;
+}
+
+.active{
+    color: #fb4f4f;
+    position: relative;
+}
+
+.active::after{
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #fb4f4f;
+    position: absolute;
+    bottom: -21px;
+    left: 0;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.log-out{
+    grid-column: 4/5;
+    justify-self: flex-end;
+    text-decoration: none;
+    color: #fbfbfb;
+    background-color: #fb4f4f;
+    padding: 0.5em 1em;
+    border-radius: 25px;
+    transition: 0.2s ease;
+}
+
+.log-out:hover{
+    background-color: #E04646;
+}
+
+.turbolinks-progress-bar {
+    height: 5px;
+    background-color: #fb4f4f;
+}
+
+
+ 

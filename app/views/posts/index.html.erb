@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag 'post'%>
+<div id = "user-information">
+    <%=render 'user'%>
+</div>
+
+<div>
+    <%=render 'post_form'%>
+</div>
+
+<div id = "timeline">
+    <h1 id = "feed-title">Timeline</h1>
+    <%=render 'feed'%>
+</div>
+
+<div id = "find-friends">
+    <h1 id = "feed-title-top">Find friends</h1>
+    <%= render 'friends'%>
+</div>

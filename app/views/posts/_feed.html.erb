@@ -1,0 +1,51 @@
+<%= stylesheet_link_tag "feed" %>
+<%if !@user_posts.empty?%>
+    <%@user_posts.each do |post|%>
+        <div class = "post">
+            <div class = "user">
+                <%if post.user.profile_picture.attached?%>
+                    <img src = <%= url_for(post.user.profile_picture)%> class = "profile-picture"%>
+                <%else%>
+                    <div class = "profile-picture"></div>
+                <%end%>
+                <div class = "user-details">
+                    <%=link_to post.user.name, user_path(post.user), class: "post-user-name"%>
+                    <p>Posted <%=distance_of_time_in_words(Time.now, post.created_at)%> ago</p>
+                </div>
+                <%if current_user.id == post.user_id%>
+                    <div class = "user-post-options">
+                        <a href = <%=edit_post_path(post)%> title = "Edit post"><span class="material-icons" id = "delete-post">create</span></a>
+                        <a href = <%=post_path(post)%> data-method = "delete" title = "Delete post"><span class="material-icons" id = "delete-post">delete</span></a>
+                    </div>
+                <%end%>
+            </div>
+            
+            <p class = "body-text"><%=post.body_text%></p>
+            
+            <div class = "react">
+                <%if did_user_like_post?(post)%>
+                    <a class = "react-link" id = "liked" href = <%=post_like_path(post, 0)%> data-method = "delete" title = "Unlike post"><span class="material-icons md-18" id = "liked">thumb_up</span>Liked (<%=post.likes.length%>)</a>
+                <%else%>
+                    <a class = "react-link" href = <%=post_likes_path(post)%> data-method = "post" title = "Like post"><span class="material-icons md-18">thumb_up</span>Like (<%=post.likes.length%>)</a>
+                <%end%>
+                <a class = "react-link" href = # title = "View comments"><span class="material-icons md-18" id = "react-icon">add_comment</span>Comments (<%=post.comments.length%>)</a>
+            </div>
+            
+            <%=render 'posts/comments', post: post, edit: false, edit_comment: 0%>
+            
+            <div class = "comment-div">
+                <%if current_user.profile_picture.attached?%>
+                    <img src = <%= url_for(current_user.profile_picture)%> class = "profile-picture"%>
+                <%else%>
+                    <div class = "profile-picture"></div>
+                <%end%>
+                <%= form_with(model: @new_comment, url: post_comments_path(post), class: "comment-form") do |f|%>
+                    <%=f.text_area(:comment_text,  placeholder: "Write your thoughts, #{current_user.name.split(" ")[0]}")%>
+                    <%=f.submit 'Comment', class: "comment-post"%>
+                <%end%> 
+            </div>
+        </div>
+    <%end%>
+<%else%>
+    <h4 class = "message">No posts yet. Post something!</h4>
+<%end%>

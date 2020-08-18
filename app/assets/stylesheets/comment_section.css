@@ -1,0 +1,58 @@
+.user-comment-details{
+    display: flex;
+    align-items: center;
+    margin: 0em 1em;
+}
+
+.user-comment-details h4{
+
+}
+
+.user-comment-details p{
+    color: #888;
+    font-size: 0.8em;
+}
+
+.comment{
+    display: grid;
+    grid-template-columns: 7.5% 75% 20%;
+    justify-items: center;
+    align-items: center;
+}
+
+.comment-contents{
+    background-color: rgb(235, 235, 235);
+    margin: 1em 0em 1em 0.5em;
+    height: max-content;
+    border-radius: 25px;
+    padding: 0.5em 0.3em;
+    grid-column: 2/3;
+    justify-self: start;
+}
+
+.comment-text{
+    margin: 0.5em 1em 0em 1em;
+    font-size: 0.9em;
+}
+
+#delete-comment{
+    padding: 0.25em;
+    margin: 0em 0.25em;
+    border-radius: 50%;
+    transition: 0.2s ease;
+}
+
+#delete-comment:hover{
+    background-color: #fb4f4f;
+    color: #fbfbfb;
+    box-shadow: 0px 2px 4px #bbb;
+}
+
+.comment-user-name{
+    color: black;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 0em 0.5em 0em 0em;
+}
+

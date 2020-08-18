@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag 'suggested_friends'%>
+<%if !@not_friends.empty?%>
+    <div id = "suggested-friends-div">
+        <%@not_friends.each do|user|%>
+            <div class = "suggested-friend">
+                <%if user.profile_picture.attached?%>
+                    <img src = <%= url_for(user.profile_picture)%> class = "small-profile-picture"%>
+                <%else%>
+                    <div class = "small-profile-picture"></div>
+                <%end%>
+                <div class = "friend-request">
+                    <h5><%=user.name%></h5>
+                    <%=link_to "Add friend", user_friendships_path(user.id), method: "post", class: "add-friend", title: "Send a friend request"%>
+                </div>
+            </div>
+        <%end%>
+    </div>
+<%else%>
+    <h4 class = "message">No users can be added for now</h4>
+<%end%>

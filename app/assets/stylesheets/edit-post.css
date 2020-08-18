@@ -1,0 +1,131 @@
+#main-div{
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+}
+
+#edit-form-div{
+    grid-column: 2/3;
+    margin: 2em 0em;
+}
+
+.edit-title{
+    margin: 0em 0em 1em 0em;
+    color: #888;
+}
+
+.post-content{
+    background-color: #fbfbfb;
+    padding: 1em;
+    box-shadow: 0px 2px 4px #bbb;
+    border-radius: 5px;
+}
+
+.profile-picture, .small-profile-picture{
+    background-color: #fb4f4f;
+    border-radius: 50%;
+}
+
+.profile-picture{
+    width: 70px;
+    height: 70px;
+}
+
+.small-profile-picture{
+    width: 50px;
+    height: 50px;
+}
+
+.user-post-info{
+    display: grid;
+    grid-template-columns: 10% 1fr;
+    align-items: center;
+    gap: 1em;
+}
+
+.user-details p{
+    color: #888;
+}
+
+.body-text{
+    margin: 2em 0.25em 0.25em 0.25em;
+}
+
+.edit-form, .edit-comment-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-form{
+    margin: 1em 0em;
+}
+
+.edit-form textarea, .edit-comment-form textarea{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1em;
+    background-color: rgba(235, 235, 235, 1);
+    border: none;
+    border-radius: 5px;
+}
+
+.edit-form textarea{
+    width: 700px;
+    height: max-content;
+}
+
+.update-btn{
+    border: none;
+    background-color: #fb4f4f;
+    align-self: flex-end;
+    margin: 1em 0em 0em 0em;
+    padding: 0.7em 1.25em;
+    color: #fbfbfb;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.update-btn:hover{
+    background-color: #E04646;
+}
+
+.react{
+    display: flex;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    justify-content: space-evenly;
+    padding: 0.3em 0em;
+}
+
+.react-link{
+    display: flex;
+    align-items: center;
+    margin: 0.5em 0em 0.5em 0em;
+    text-decoration: none;
+    color: #888;
+}
+
+.material-icons{
+    margin: 0em 0.5em;
+}
+
+.md-18{
+    font-size: 1.5em;
+}
+
+#liked{
+    color: #fb4f4f;
+}
+
+.edit-comment-div{
+    display: grid;
+    grid-template-columns: 10% 1fr;
+    margin: 1em 0em 0em 0em;
+}
+
+.edit-comment-form textarea{
+    width: 580px;
+    height: max-content;
+    grid-column: 2/3;
+    margin: 0em -0.25em;
+    font-size: 0.9em;
+}

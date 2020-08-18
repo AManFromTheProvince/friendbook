@@ -1,0 +1,54 @@
+#main-div{
+    display: grid;
+    grid-template-areas: "user post friend"
+                         "user feed friend";
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+
+#feed-title, #feed-title-top{ 
+    color: #888;
+    /* safe */
+}
+
+#feed-title-top{
+    margin: 0.8em 1em;
+    /* safe */
+}
+
+.profile-picture, .small-profile-picture, .big-profile-picture{
+    border-radius: 50%;
+    background-color: #fb4f4f;
+}
+
+.small-profile-picture{
+    width: 40px;
+    height: 40px;
+}
+
+.big-profile-picture{
+    width: 70px;
+    height: 70px;
+}
+
+.comment-form textarea{
+    width: 510px;
+    height: 70px;
+}
+
+.user-post-options{
+    grid-template: 3/4;
+    display: flex;
+    justify-self: flex-start;
+    margin: 0em -0.62em;
+}
+
+.user-comment-options{
+    display: flex;
+}
+
+
+
+
+

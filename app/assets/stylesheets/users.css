@@ -1,0 +1,135 @@
+#main-div{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fbfbfb;
+    margin: 2em 0.5em 2em 2em;
+    padding: 1em;
+    box-shadow: 0px 2px 4px #bbb;
+    border-radius: 5px;
+    height: max-content;
+}
+
+.user-info, .friend{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.big-profile-picture, .profile-picture, .small-profile-picture, .medium-profile-picture{
+    background-color: #fb4f4f;
+}
+
+.small-profile-picture{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.big-profile-picture{
+    width: 150px;
+    height: 150px;
+    background-color: #fb4f4f;
+    box-shadow: 0px 2px 4px #ddd;
+    margin: 1em;
+}
+
+.profile-picture{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0em 0.5em;
+}
+
+.medium-profile-picture{
+    width: 105px;
+    height: 105px;
+}
+
+.edit-profile{
+    margin: 0.5em ;
+    padding: 0.5em 0.75em;
+    border: 1px solid #fb4f4f;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fb4f4f;
+    transition: 0.2s ease;
+}
+
+.edit-profile:hover{
+    background-color: #fb4f4f;
+    color: #fbfbfb;
+    box-shadow: 0px 2px 4px #bbb;
+}
+
+.friends-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#friends-title{
+    margin-right: auto;
+    margin-left: 1em;
+    color: #888;
+}
+
+.friend{
+    margin: 0.5em;
+}
+
+.friend-name{
+    font-size: 0.75em;
+    margin: 0.5em 0em;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+
+.post{
+    margin: 1em;
+}
+
+.comment-form textarea{
+    width: 720px;
+    height: 70px;
+}
+
+.post-div{
+    margin: 0em 2em 0em 1.5em;
+}
+
+.user-post-options{
+    grid-template: 3/4;
+    display: flex;
+    justify-self: flex-end;
+    margin: 0em -1.2em;
+}
+
+.user-comment-options{
+    display: flex;
+}
+
+.message{
+    color: #bbb;
+    text-align: center;
+    margin-top: 10em;
+}
+
+.cancel-option{
+    background-color: #ddd;
+    color: #888;    
+    padding: 0.5em 0.75em;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cancel-option:hover{
+    background-color: #bbb;
+    color: #333;
+}

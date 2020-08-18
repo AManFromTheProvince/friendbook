@@ -1,0 +1,133 @@
+#timeline{
+    grid-area: feed;
+    margin: 2em 0em;
+    width: 100%;
+    justify-self: center;    
+}
+
+
+.post{
+    background-color: #fbfbfb;
+    margin: 1em 0em;
+    padding: 1em 1em 0em 1em; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+
+.post:hover{
+    box-shadow: 0px 2px 4px #bbb;
+}
+
+.user{
+    display: grid;
+    grid-template-columns: 10% 70% 15%;
+    align-items: center;
+    gap: 7.5px;
+}
+
+.user-details p{
+    color: #888;
+    font-size: 0.9em;
+}
+
+.profile-picture{
+    width: 50px;
+    height: 50px;
+}
+
+.post-user-name{
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.body-text{
+    margin: 2em 0em 0.5em 0em;
+}
+
+.react{
+    display: flex;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    justify-content: space-evenly;
+    padding: 0.3em 0em;
+}
+
+.react-link{
+    display: flex;
+    align-items: center;
+    margin: 0.5em 0em 0.5em 0em;
+    text-decoration: none;
+    color: #888;
+}
+
+.material-icons{
+    margin: 0em 0.5em;
+}
+
+.md-18{
+    font-size: 1.5em;
+}
+
+#liked{
+    color: #fb4f4f;
+}
+
+.comment-div{
+    margin: 1em 0em;
+    display: grid;
+    grid-template-columns: 10% 1fr;
+    width: 100%;
+}
+
+.comment-form{
+    grid-column: 2/3;
+    margin: 0em 0em 0em 0.25em;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form textarea{
+    background-color: rgb(235, 235, 235);
+    border-radius: 5px;
+    padding: 1em;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+}
+
+.comment-post{
+    background-color: #fb4f4f;
+    color: #fbfbfb;
+    padding: 0.5em 1em;
+    margin: 0.5em 0em;
+    justify-self: flex-end;
+    align-self: flex-end;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.comment-post:hover{
+    background-color: #E04646;
+}
+
+#delete-post{
+    padding: 0.25em;
+    border-radius: 50%;
+    transition: 0.2s ease;
+}
+
+#delete-post:hover{
+    background-color: #fb4f4f;
+    color: #fbfbfb;
+    box-shadow: 0px 2px 4px #bbb;
+}
+
+.message{
+    color: #888;
+}

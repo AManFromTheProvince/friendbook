@@ -1,0 +1,27 @@
+<%=stylesheet_link_tag 'comment_section'%>
+<div class = "comments-section">
+    <%post.comments.each do|comment|%>
+        <%if !edit || edit_comment != comment.id%>
+            <div class = "comment">
+                <%if comment.user.profile_picture.attached?%>
+                    <img src = <%= url_for(comment.user.profile_picture)%> class = "small-profile-picture"%>
+                <%else%>
+                    <div class = "small-profile-picture"></div>
+                <%end%>
+                <div class = "comment-contents">
+                    <div class = "user-comment-details">
+                        <%=link_to comment.user.name, user_path(comment.user), class: "comment-user-name"%>
+                        <p>commented <%=distance_of_time_in_words(Time.now, comment.created_at)%> ago</p>
+                    </div>
+                    <p class = "comment-text"><%=comment.comment_text%></p>
+                </div>
+                <%if current_user.id == comment.user_id%>
+                    <div class = "user-comment-options">
+                        <a href = <%=edit_post_comment_path(post, comment)%> title = "Edit post"><span class="material-icons" id = "delete-comment">create</span></a>
+                        <a href = <%=post_comment_path(post,comment)%> data-method = "delete" title = "Delete comment"><span class="material-icons" id = "delete-comment">delete</span></a>
+                    </div>
+                <%end%>
+            </div>
+        <%end%>
+    <%end%>
+</div>

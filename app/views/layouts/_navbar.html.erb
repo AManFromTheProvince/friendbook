@@ -1,0 +1,19 @@
+<%if user_signed_in?%>
+    <nav id = "navbar" class = "feed-navbar" data-turbolinks-permanent>
+        <h1 id = "logo-user">Friendbook</h2>
+        <ul id = "users-links-list">
+            <li class = "users-links"><a href = <%=posts_path%>><span class="material-icons md-24 timeline active">timeline</span></a></li>
+            <li class = "users-links"><a href = <%=user_friendships_path(current_user)%>><span class="material-icons md-24 friend_request">group_add</span></a></li>
+            <li class = "users-links"><a href = <%=user_path(current_user)%>><span class="material-icons md-24 profile_account">account_circle</span></a></li>
+        </ul>
+        <%=link_to "Log out", destroy_user_session_path, method: "delete", class: "log-out"%>
+    </nav>
+<%else%>
+    <nav id = "navbar" class = "sign-up-navbar" data-turbolinks-permanent>
+        <h1 id = "logo">Friendbook</h2>
+        <ul id = "links-list">
+            <li class = "menu-links log_in"><%=link_to 'Log in', new_user_session_path%></li>
+            <li class = "menu-links sign_up"><%=link_to 'Sign up', new_user_registration_path%></li>
+        </ul>
+    </nav>
+<%end%>

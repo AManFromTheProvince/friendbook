@@ -1,0 +1,46 @@
+#post-div{
+    grid-area: post;
+    justify-self: center;
+    margin: 2em 0em;
+    background-color: #fbfbfb;
+    padding: 1em;
+    width: 100%;
+    box-shadow: 0px 2px 4px #bbb;
+    border-radius: 5px;
+    min-width: 598px;
+}
+
+#new_post{
+    display: flex;
+    flex-direction: column;
+}
+
+#new_post textarea{
+    margin: 0.5em 0em;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    border-radius: 5px;
+    padding: 1em;
+    height: 120px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.submit-post{
+    align-self: flex-end;
+    border: none;
+    background-color: #fb4f4f;
+    color: #fbfbfb;
+    width: max-content;
+    padding: 0.7em 2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    margin: 1em 0em 0em 0em;
+}
+
+.submit-post:hover{
+    background-color: #E04646;
+}
+
+/* .comment-post:hover ^/
+

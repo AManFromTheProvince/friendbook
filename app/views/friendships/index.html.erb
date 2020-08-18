@@ -1,0 +1,39 @@
+<%=stylesheet_link_tag 'friend_requests'%>
+<div id = "received-friendship">
+    <h1 class = "friendship-title"><%=@received_requests.length%> received friend requests</h1>
+    <%if !@received_requests.empty?%>
+        <% @received_requests.each do|request|%>
+            <div class = "friend-received-request">
+                <%if request.profile_picture.attached?%>
+                    <img src = <%= url_for(request.profile_picture)%> class = "profile-picture"%>
+                <%else%>
+                    <div class = "profile-picture"></div>
+                <%end%>
+                <%= link_to request.name, user_path(request), class: 'friend-name'%>
+                <%= link_to 'Accept', accept_user_friendship_path(current_user.id, request.id), method: "post", class: "add-option"%>
+                <%= link_to 'Delete', remove_user_friendship_path(current_user.id, request.id), method: "delete", class: "cancel-option"%>
+            </div>
+        <%end%>
+    <%else%>
+        <p class = "nothing">No friend requests received</p>
+    <%end%>
+</div>
+
+<div id = "sent-friendship">
+    <h1 class = "friendship-title"><%=@sent_requests.length%> sent friend requests</h1>
+    <%if !@sent_requests.empty?%>
+        <% @sent_requests.each do|sent|%>
+            <div class = "friend-request">
+                <%if sent.profile_picture.attached?%>
+                    <img src = <%= url_for(sent.profile_picture)%> class = "profile-picture"%>
+                <%else%>
+                    <div class = "profile-picture"></div>
+                <%end%>
+                 <%= link_to sent.name, user_path(sent), class: 'friend-name'%>
+                <%= link_to 'Cancel', user_friendship_path(current_user.id, sent.id), method: "delete", class: "cancel-option"%>
+            </div>
+        <%end%>
+    <%else%>
+        <p class = "nothing">No friend requests sent</p>
+    <%end%>
+</div>

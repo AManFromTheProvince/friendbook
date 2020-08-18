@@ -1,0 +1,81 @@
+#main-div{
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+    gap: 0em;
+}
+
+#received-friendship, #sent-friendship{
+    grid-column: 2/3;
+    justify-self: center;
+    background-color: #fbfbfb;
+    box-shadow: 0px 2px 4px #bbb;
+    padding: 1em 1em;
+    margin: 1em 0em;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.friendship-title{
+    color: #888;
+}
+
+.nothing{
+    color: #333;
+}
+
+.profile-picture{
+    width: 60px;
+    height: 60px;
+    background-color: #fb4f4f;
+    border-radius: 50%;
+}
+
+.friend-request, .friend-received-request{
+    display: grid;
+    align-items: center;
+    gap: 1em;
+    margin: 0.5em 0em 0em 0em;
+}
+
+.friend-request{
+    grid-template-columns: 10% 75% 10%;
+}
+
+.friend-received-request{
+    grid-template-columns: 10% 62.5% 10% 10%;
+}
+
+.friend-name{
+    margin: 0;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.add-option, .cancel-option{
+    text-decoration: none;
+    padding: 0.5em 0.5em;
+    text-align: center;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+.add-option{
+    background-color: #fb4f4f;
+    color: #fbfbfb;
+}
+
+.add-option:hover{
+    background-color: #E04646;
+}
+
+.cancel-option{
+    background-color: #ddd;
+    color: #888;    
+}
+
+.cancel-option:hover{
+    background-color: #bbb;
+    color: #333;
+}
+

@@ -4,14 +4,14 @@
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="field"> 
+    <div id="profile-field"> 
       <%if current_user.any_attached?%>
         <img src = <%=url_for(current_user.profile_picture)%> class = "profile-picture">
       <%else%>
-        <div class = "profile-picture"></div>
+         <img class = "profile-picture">
       <%end%>
       <%= f.label :profile_picture, "Profile Picture" %><br />
-      <%= f.file_field :profile_picture, accept: 'image/jpeg,image/png'%>
+      <%= f.file_field :profile_picture, accept: 'image/jpeg,image/png', id: "profile-pic-file"%>
     </div>
   
     <div class="field">
@@ -43,7 +43,8 @@
     </div>
 
     <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br>
+      <b> If you used Facebook to log in, don't put anything here!</b><br />
       <%= f.password_field :current_password, autocomplete: "current-password", class: "password-field"  %>
     </div>
 

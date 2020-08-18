@@ -1,4 +1,5 @@
 class FriendshipsController < ApplicationController
+    before_action :signed_in?
     def index
         @user_friendship = User.includes(:friendship)    
         @received_requests = @user_friendship.received_request(current_user.id)

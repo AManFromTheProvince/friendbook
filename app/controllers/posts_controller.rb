@@ -48,13 +48,7 @@ class PostsController < ApplicationController
     end
 
     private
-    def signed_in?
-        if !user_signed_in?
-            redirect_to new_user_session_path
-        end
-    end
-
     def post_params
-        params.require(:post).permit(:body_text)
+        params.require(:post).permit(:body_text, :post_picture)
     end
 end

@@ -122,10 +122,20 @@
 }
 
 .profile-picture{
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     background-color: #fb4f4f;
     box-shadow: 0px 2px 4px #bbb;
+}
+
+#profile-field{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#profile-field input, #profile-field label{
+    margin-right: auto;
 }
 
 @keyframes slide-up{

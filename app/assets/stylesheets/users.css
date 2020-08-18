@@ -96,7 +96,7 @@
 }
 
 .comment-form textarea{
-    width: 720px;
+    width: 750px;
     height: 70px;
 }
 
@@ -132,4 +132,9 @@
 .cancel-option:hover{
     background-color: #bbb;
     color: #333;
+}
+
+.post-pic{
+    width: 830px;
+    height: 100%;
 }

@@ -3,6 +3,10 @@
     <%= form_for(@new_post) do |f|%>
         <%=f.text_area(:body_text, placeholder: "What's happening #{current_user.name.split(" ")[0]}...")%>
         
-        <%=f.submit "Post", class: "submit-post"%>
+        <img class = "post-pic">
+        <div class = "post-options">
+            <%=f.file_field :post_picture, accept: 'image/png,image/jpeg', id: "post-picture-file"%>
+            <%=f.submit "Post", class: "submit-post"%>
+        </div>
     <%end%>
 </div>

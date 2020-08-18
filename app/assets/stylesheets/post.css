@@ -33,7 +33,7 @@
 }
 
 .comment-form textarea{
-    width: 510px;
+    width: 530px;
     height: 70px;
 }
 
@@ -48,6 +48,10 @@
     display: flex;
 }
 
+.post-pic{
+    width: 600px;
+    height: 100%;
+}
 
 
 

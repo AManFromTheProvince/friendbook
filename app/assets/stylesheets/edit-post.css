@@ -123,9 +123,18 @@
 }
 
 .edit-comment-form textarea{
-    width: 580px;
+    width: 630px;
     height: max-content;
     grid-column: 2/3;
     margin: 0em -0.25em;
     font-size: 0.9em;
+}
+
+.comments{
+    cursor: pointer;
+}
+
+.post-pic{
+    width: 700px;
+    height: 100%;
 }

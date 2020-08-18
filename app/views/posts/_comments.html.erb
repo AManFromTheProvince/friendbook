@@ -1,5 +1,5 @@
 <%=stylesheet_link_tag 'comment_section'%>
-<div class = "comments-section">
+<div class = "comments-section-<%=post.id%>">
     <%post.comments.each do|comment|%>
         <%if !edit || edit_comment != comment.id%>
             <div class = "comment">
@@ -11,7 +11,7 @@
                 <div class = "comment-contents">
                     <div class = "user-comment-details">
                         <%=link_to comment.user.name, user_path(comment.user), class: "comment-user-name"%>
-                        <p>commented <%=distance_of_time_in_words(Time.now, comment.created_at)%> ago</p>
+                        <p>commented <%=distance_of_time_in_words(Time.now, comment.updated_at)%> ago</p>
                     </div>
                     <p class = "comment-text"><%=comment.comment_text%></p>
                 </div>

@@ -131,3 +131,9 @@
 .message{
     color: #888;
 }
+
+.comments{
+    cursor: pointer;
+}
+
+

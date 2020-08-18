@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+    before_action :signed_in?
     def create
         post = Post.find_by_id(params[:post_id])
         @new_comment = post.comments.build(comment_params)
